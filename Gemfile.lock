@@ -1,9 +1,23 @@
+GIT
+  remote: https://github.com/tradziej/bitcoinaverage.git
+  revision: 66113129ad81c09a839c60a7f6b1bb9aedcb38dd
+  branch: new_currencies_support
+  specs:
+    bitcoinaverage (0.0.3)
+      httparty
+      json
+
 GEM
   remote: http://rubygems.org/
   specs:
     daemons (1.2.2)
     diff-lcs (1.2.5)
     eventmachine (1.0.7)
+    httparty (0.13.3)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
+    json (1.8.2)
+    multi_xml (0.5.5)
     rack (1.6.0)
     rack-protection (1.5.3)
       rack
@@ -34,6 +48,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bitcoinaverage!
   rspec
   sinatra (= 1.4.6)
   thin
