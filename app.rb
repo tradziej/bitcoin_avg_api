@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/namespace'
 require 'active_support/all'
 require 'redis'
+require './services/bitcoin_price'
 
 require './config/environments'
 
@@ -21,6 +22,7 @@ namespace '/api' do
 
       if currencies.include?(currency)
         {
+          price: Services::BitcoinPrice.new.get(currency),
           currency: currency
         }.to_json
       else

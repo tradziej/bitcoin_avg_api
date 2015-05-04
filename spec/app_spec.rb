@@ -36,6 +36,8 @@ describe "Bitcoin average price app" do
         let(:currency){ "USD" }
         let(:endpoint){ path.concat(currency) }
 
+        before{ allow(BitcoinAverage).to receive_message_chain(:global, :last).and_return(100.55) }
+
         it "returns 200 status code" do
           get endpoint
           expect(last_response.status).to eq(200)
@@ -43,7 +45,7 @@ describe "Bitcoin average price app" do
 
         it "returns JSON body" do
           get endpoint
-          expect(last_response.body).to be_json_eql(%({"currency":"USD"}))
+          expect(last_response.body).to be_json_eql(%({"price": 100.55, "currency":"USD"}))
         end
       end
     end
