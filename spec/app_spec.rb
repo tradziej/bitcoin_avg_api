@@ -1,6 +1,10 @@
 require File.expand_path '../spec_helper.rb', __FILE__
 
 describe "Bitcoin average price app" do
+  before(:all) do
+    basic_authorize Sinatra::Application.settings.api_user, Sinatra::Application.settings.api_password
+  end
+
   describe '/' do
     let(:endpoint) { '/' }
     it "returns a 200 status code" do

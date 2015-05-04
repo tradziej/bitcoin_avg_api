@@ -1,0 +1,9 @@
+development:
+  api_user: user
+  api_password: pass
+production:
+  api_user: prod
+  api_password: prod
+test:
+  api_user: test
+  api_password: test
