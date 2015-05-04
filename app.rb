@@ -22,7 +22,7 @@ namespace '/api' do
 
       if currencies.include?(currency)
         {
-          price: Services::BitcoinPrice.new.get(currency),
+          price: Services::BitcoinPrice.new(currency).get,
           currency: currency
         }.to_json
       else
