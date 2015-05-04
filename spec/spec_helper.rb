@@ -1,5 +1,6 @@
 require 'rack/test'
 require 'rspec'
+require 'json_spec'
 
 require File.expand_path '../../app.rb', __FILE__
 

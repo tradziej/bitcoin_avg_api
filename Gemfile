@@ -11,4 +11,5 @@ gem 'bitcoinaverage', git: 'https://github.com/tradziej/bitcoinaverage.git', bra
 
 group :test do
   gem 'rspec'
+  gem 'json_spec'
 end
