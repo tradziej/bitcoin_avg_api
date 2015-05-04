@@ -38,8 +38,12 @@ namespace '/api' do
         }.to_json
       else
         status(404)
-        body({error: "not-found"}.to_json)
       end
     end
   end
+end
+
+not_found do
+  content_type :json
+  halt 404, {error: "not-found"}.to_json
 end
