@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'sinatra/namespace'
 require 'sinatra/config_file'
-require 'active_support/all'
 require 'redis'
 require './services/bitcoin_price'
 
