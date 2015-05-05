@@ -1,5 +1,4 @@
 .ruby-version
 .DS_Store
 
-config/redis.yml
 config/config.yml

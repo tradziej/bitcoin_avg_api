@@ -5,8 +5,8 @@ require 'active_support/all'
 require 'redis'
 require './services/bitcoin_price'
 
-require './config/environments'
 config_file 'config/config.yml'
+require './config/environments'
 
 use Rack::Auth::Basic, "API authentication" do |username, password|
   username == settings.api_user && password == settings.api_password
