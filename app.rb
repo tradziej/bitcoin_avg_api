@@ -3,8 +3,10 @@ require 'sinatra/namespace'
 require 'redis'
 require './services/bitcoin_price'
 
-require 'dotenv'
-Dotenv.load
+if Sinatra::Base.development?
+  require 'dotenv'
+  Dotenv.load
+end
 
 require './config/environments'
 
