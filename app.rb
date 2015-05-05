@@ -1,14 +1,15 @@
 require 'sinatra'
 require 'sinatra/namespace'
-require 'sinatra/config_file'
 require 'redis'
 require './services/bitcoin_price'
 
-config_file 'config/config.yml'
+require 'dotenv'
+Dotenv.load
+
 require './config/environments'
 
 use Rack::Auth::Basic, "API authentication" do |username, password|
-  username == settings.api_user && password == settings.api_password
+  username == ENV['API_USER'] && password == ENV['API_PASSWORD']
 end
 
 def currencies

@@ -5,6 +5,8 @@ require 'json_spec'
 require File.expand_path '../../app.rb', __FILE__
 
 ENV['RACK_ENV'] = 'test'
+ENV['API_USER'] = 'user'
+ENV['API_PASSWORD'] = 'pass'
 
 module RSpecMixin
   include Rack::Test::Methods

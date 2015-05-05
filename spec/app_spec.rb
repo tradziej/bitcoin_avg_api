@@ -2,7 +2,7 @@ require File.expand_path '../spec_helper.rb', __FILE__
 
 describe "Bitcoin average price app" do
   before(:all) do
-    basic_authorize Sinatra::Application.settings.api_user, Sinatra::Application.settings.api_password
+    basic_authorize ENV['API_USER'], ENV['API_PASSWORD']
   end
 
   describe '/' do
