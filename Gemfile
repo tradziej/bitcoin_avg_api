@@ -12,3 +12,7 @@ group :test do
   gem 'rspec'
   gem 'json_spec'
 end
+
+group :development do
+  gem 'dotenv'
+end
