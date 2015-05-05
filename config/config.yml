@@ -1,13 +1,11 @@
 development:
   api_user: user
   api_password: pass
-  redis:
-    host: localhost
-    port: 6379
-    password:
+  redis_url: redis://localhost:6379
 production:
   api_user: prod
   api_password: prod
+  redis_url: <%= ENV['REDISTOGO_URL'] %>
 test:
   api_user: test
   api_password: test

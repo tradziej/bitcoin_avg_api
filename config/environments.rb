@@ -1,6 +1,9 @@
 configure :production, :development do
+  uri = URI.parse(settings.redis_url)
+
   $redis = Redis.new({
-    host: settings.redis[:host],
-    port: settings.redis[:port]
+    host: uri.host,
+    port: uri.port,
+    password: uri.password
   })
 end
